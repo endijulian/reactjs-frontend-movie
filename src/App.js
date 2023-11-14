@@ -1,4 +1,4 @@
-import Home from "./components/Home";
+import { Outlet, Link } from "react-router-dom";
 
 function App() {
   return (
@@ -9,9 +9,9 @@ function App() {
         </div>
 
         <div className="col text-end">
-          <a href="#!">
+          <Link to="/login">
             <span className="badge bg-success">Login</span>
-          </a>
+          </Link>
         </div>
 
         <hr className="mb-3"></hr>
@@ -21,30 +21,45 @@ function App() {
         <div className="col-md-2">
           <nav>
             <div className="list-group">
-              <a href="#!" className="list-group-item list-group-item-action">
+              <Link to="/" className="list-group-item list-group-item-action">
                 Home
-              </a>
-              <a href="#!" className="list-group-item list-group-item-action">
+              </Link>
+              <Link
+                to="/movies"
+                className="list-group-item list-group-item-action"
+              >
                 Movies
-              </a>
-              <a href="#!" className="list-group-item list-group-item-action">
+              </Link>
+              <Link
+                to="/genres"
+                className="list-group-item list-group-item-action"
+              >
                 Genres
-              </a>
-              <a href="#!" className="list-group-item list-group-item-action">
+              </Link>
+              <Link
+                to="/admin/movie/0"
+                className="list-group-item list-group-item-action"
+              >
                 Add Movie
-              </a>
-              <a href="#!" className="list-group-item list-group-item-action">
+              </Link>
+              <Link
+                to="/manage-catalog"
+                className="list-group-item list-group-item-action"
+              >
                 Manage Catalog
-              </a>
-              <a href="#!" className="list-group-item list-group-item-action">
+              </Link>
+              <Link
+                to="/graphql"
+                className="list-group-item list-group-item-action"
+              >
                 GraphQL
-              </a>
+              </Link>
             </div>
           </nav>
         </div>
 
         <div className="col-md-10">
-          <Home></Home>
+          <Outlet></Outlet>
         </div>
       </div>
     </div>
